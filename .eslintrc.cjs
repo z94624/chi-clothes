@@ -15,6 +15,7 @@ module.exports = {
     ecmaVersion: 2020
   },
   rules: {
-    'no-undef': 'off'
+    'no-undef': 'off',
+    'vue/multi-word-component-names': 'off'
   }
 }
