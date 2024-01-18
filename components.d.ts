@@ -8,5 +8,17 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Home: typeof import('./src/components/Home.vue')['default']
+    NAvatar: typeof import('naive-ui')['NAvatar']
+    NBreadcrumb: typeof import('naive-ui')['NBreadcrumb']
+    NBreadcrumbItem: typeof import('naive-ui')['NBreadcrumbItem']
+    NButton: typeof import('naive-ui')['NButton']
+    NDropdown: typeof import('naive-ui')['NDropdown']
+    NGi: typeof import('naive-ui')['NGi']
+    NGrid: typeof import('naive-ui')['NGrid']
+    NIcon: typeof import('naive-ui')['NIcon']
+    NImage: typeof import('naive-ui')['NImage']
+    NPageHeader: typeof import('naive-ui')['NPageHeader']
+    NSpace: typeof import('naive-ui')['NSpace']
+    NStatistic: typeof import('naive-ui')['NStatistic']
   }
 }
