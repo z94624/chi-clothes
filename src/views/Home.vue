@@ -1,6 +1,10 @@
 <template>
     <div>
         <Header />
+
+        <div class="homeContent">
+            <About />
+        </div>
     </div>
 </template>
 
@@ -8,4 +12,8 @@
 import { Header } from '../layout/components/Header';
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.homeContent {
+    margin-top: 79px;
+}
+</style>

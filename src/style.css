@@ -4,29 +4,30 @@
 
 :root {
   font-family: Helvetica, Arial, "微軟正黑體", Heiti TC, "メイリオ", sans-serif;
-  line-height: 1.5;
   font-size: 16px;
   font-weight: 400;
 
   color-scheme: light dark;
   color: #050505;
   background-color: #fff;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
-
 body {
-  margin: 0;
   min-width: 100vw;
   min-height: 100vh;
 }
-
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  height: 100vh;
+}
+
+.title {
+  font-size: 38px;
+  font-family: "Noto Sans TC", "微軟正黑體", sans-serif;
+  letter-spacing: 0.5px;
+}
+.subTitle {
+  font-size: 17px;
+  font-weight: 500;
+  font-family: "Raleway", sans-serif;
+  color: #888888;
+  letter-spacing: 1px;
 }
