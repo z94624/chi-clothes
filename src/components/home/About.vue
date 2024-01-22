@@ -1,11 +1,11 @@
 <template>
     <div class="px-3 py-6">
-        <div class="text-center">
+        <div class="ml-3">
             <span class="title">關於我們</span>
             <span class="subTitle ml-3">ABOUT US</span>
         </div>
 
-        <div class="text-center">
+        <div class="ml-3">
             <n-breadcrumb>
                 <n-breadcrumb-item :clickable="false">休閒服</n-breadcrumb-item>
                 <n-breadcrumb-item :clickable="false">團體服</n-breadcrumb-item>
@@ -19,7 +19,7 @@
             <div v-for="(feature, fIdx) in features" :key="feature.title">
                 <n-space align="center" vertical class="featureWrapper p-3">
                     <div class="icon flex justify-center items-center" :class="[`${fIdx % 2 ? 'iconEven' : 'iconOdd'}`]">
-                        <n-icon-wrapper size="108" :border-radius="54" :color="feature.color">
+                        <n-icon-wrapper :size="108" :border-radius="54" :color="feature.color">
                             <n-icon size="55" color="#fff" :component="feature.icon" />
                         </n-icon-wrapper>
                     </div>
