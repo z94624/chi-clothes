@@ -1,10 +1,10 @@
 <template>
-    <n-page-header class="header flex justify-center p-3">
+    <n-page-header class="header flex justify-center p-2">
         <template #avatar>
             <YuanLogo width="64" height="63" />
         </template>
         <template #title>
-            <div class="text-6xl font-bold">昱安服裝</div>
+            <div class="text-4xl font-bold">昱安服裝</div>
         </template>
     </n-page-header>
 </template>
