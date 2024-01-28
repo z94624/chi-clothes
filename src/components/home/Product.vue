@@ -5,7 +5,7 @@
             <span class="titleDesc ml-3">PRODUCTS</span>
         </div>
 
-        <div v-for="product in products" :key="product.name">
+        <div v-for="(product, pIdx) in products" :key="product.name">
             <div class="ml-6 mt-3">
                 <span class="subTitle">{{ product.name }}</span>
                 <span class="subTitleDesc ml-3">{{ product.desc }}</span>
@@ -39,7 +39,7 @@
                     </n-space>
                 </template>
             </n-carousel>
-            <n-divider />
+            <n-divider v-if="pIdx !== products.length - 1" />
         </div>
     </div>
 </template>

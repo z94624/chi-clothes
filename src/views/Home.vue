@@ -5,6 +5,7 @@
         <div class="homeContent">
             <About />
             <Product />
+            <Contact />
         </div>
     </div>
 </template>
