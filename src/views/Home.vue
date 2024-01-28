@@ -4,6 +4,7 @@
 
         <div class="homeContent">
             <About />
+            <Product />
         </div>
     </div>
 </template>

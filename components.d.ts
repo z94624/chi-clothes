@@ -10,9 +10,16 @@ declare module 'vue' {
     About: typeof import('./src/components/home/About.vue')['default']
     NBreadcrumb: typeof import('naive-ui')['NBreadcrumb']
     NBreadcrumbItem: typeof import('naive-ui')['NBreadcrumbItem']
+    NButton: typeof import('naive-ui')['NButton']
+    NCard: typeof import('naive-ui')['NCard']
+    NCarousel: typeof import('naive-ui')['NCarousel']
+    NCarouselItem: typeof import('naive-ui')['NCarouselItem']
+    NDivider: typeof import('naive-ui')['NDivider']
     NIcon: typeof import('naive-ui')['NIcon']
     NIconWrapper: typeof import('naive-ui')['NIconWrapper']
+    NImage: typeof import('naive-ui')['NImage']
     NPageHeader: typeof import('naive-ui')['NPageHeader']
     NSpace: typeof import('naive-ui')['NSpace']
+    Product: typeof import('./src/components/home/Product.vue')['default']
   }
 }
