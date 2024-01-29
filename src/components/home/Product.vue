@@ -21,7 +21,7 @@
 }">
                     <n-image class="h-full" :img-props="{
                         class: ['h-full']
-                    }" object-fit="contain" :src="`chi-clothes/src/assets/${product.disc}/${shirt.id}.png`" />
+                    }" object-fit="contain" :src="`src/assets/${product.disc}/${shirt.id}.png`" />
 
                     <template #footer>
                         <span class="title">{{ shirt.name }}</span>
