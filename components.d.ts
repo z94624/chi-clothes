@@ -17,6 +17,7 @@ declare module 'vue' {
     NDivider: typeof import('naive-ui')['NDivider']
     NIcon: typeof import('naive-ui')['NIcon']
     NIconWrapper: typeof import('naive-ui')['NIconWrapper']
+    NImage: typeof import('naive-ui')['NImage']
     NPageHeader: typeof import('naive-ui')['NPageHeader']
     NSpace: typeof import('naive-ui')['NSpace']
     Product: typeof import('./src/components/home/Product.vue')['default']

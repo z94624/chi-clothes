@@ -11,13 +11,17 @@
                 <span class="subTitleDesc ml-3">{{ product.desc }}</span>
             </div>
             <n-carousel :slides-per-view="4" autoplay draggable show-arrow class="mt-3">
-                <n-card v-for="shirt in product.data" :key="shirt.id" content-class="productContent" :content-style="{
+                <n-card v-for="shirt in product.data" :key="shirt.id" :content-style="{
                     padding: 0,
+                    height: '210px',
+                    flex: 'unset',
                 }" footer-class="productDesc" :footer-style="{
     padding: '20px',
     textAlign: 'center',
 }">
-                    <img class="carousel-img" :src="shirt.image">
+                    <n-image class="h-full" :img-props="{
+                        class: ['h-full']
+                    }" object-fit="contain" :src="`chi-clothes/src/assets/${product.disc}/${shirt.id}.png`" />
 
                     <template #footer>
                         <span class="title">{{ shirt.name }}</span>
@@ -48,70 +52,78 @@
 import { NavigateNextFilled, NavigateBeforeFilled } from '@vicons/material';
 
 interface shirtSpec {
-    id: number;
-    image: string;
+    id: string;
     name: string;
 }
 
 const fulcome: shirtSpec[] = [
     {
-        id: 1,
-        image: 'https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel1.jpeg',
-        name: '花紋 POLO 衫',
+        id: 'fu_1',
+        name: '短袖素面 POLO 衫',
     },
     {
-        id: 2,
-        image: 'https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel1.jpeg',
-        name: '花紋 POLO 衫',
+        id: 'fu_2',
+        name: '短袖線條 POLO 衫',
     },
     {
-        id: 3,
-        image: 'https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel1.jpeg',
-        name: '素面 POLO 衫',
+        id: 'fu_3',
+        name: '短袖花紋 POLO 衫',
     },
     {
-        id: 4,
-        image: 'https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel1.jpeg',
-        name: '素面 POLO 衫',
+        id: 'fu_4',
+        name: '長袖線條 POLO 衫',
     },
     {
-        id: 5,
-        image: 'https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel1.jpeg',
-        name: '線條 POLO 衫',
+        id: 'fu_5',
+        name: '長袖花紋 POLO 衫',
+    },
+];
+
+const sg: shirtSpec[] = [
+    {
+        id: 'sg_1',
+        name: '短袖素面 POLO 衫',
     },
     {
-        id: 6,
-        image: 'https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel1.jpeg',
-        name: '長袖 POLO 衫',
+        id: 'sg_2',
+        name: '短袖素面 POLO 衫',
+    },
+    {
+        id: 'sg_3',
+        name: '短袖線條 POLO 衫',
+    },
+    {
+        id: 'sg_4',
+        name: '長袖素面 POLO 衫',
+    },
+    {
+        id: 'sg_5',
+        name: '長袖線條 POLO 衫',
     },
 ];
 
 const products: {
     name: string,
+    disc: string,
     desc: string,
     data: shirtSpec[],
 }[] = [
         {
             name: 'FULCOME',
+            disc: 'fu',
             desc: '價位：中階',
             data: fulcome,
         },
         {
             name: 'SG',
+            disc: 'sg',
             desc: '價位：平價',
-            data: fulcome,
+            data: sg,
         },
     ];
 </script>
 
 <style scoped lang="scss">
-.productContent {
-    .carousel-img {
-        width: 100%;
-        object-fit: contain;
-    }
-}
-
 .productDesc {
     .title {
         color: #111;
