@@ -112,5 +112,5 @@ export default defineConfig({
 			resolvers: [NaiveUiResolver()],
 		}),
 	],
-	base: '/chi-clothes',
+	base: './',
 });
