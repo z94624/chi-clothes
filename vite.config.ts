@@ -14,14 +14,14 @@ export default defineConfig({
 			{ find: '@', replacement: fileURLToPath(new URL('./src', import.meta.url)) },
 			{
 				find: '@assets',
-				replacement: fileURLToPath(new URL('./src/shared/assets', import.meta.url)),
+				replacement: fileURLToPath(new URL('./src/assets', import.meta.url)),
 			},
-			{ find: '@cmp', replacement: fileURLToPath(new URL('./src/shared/cmp', import.meta.url)) },
+			{ find: '@cmp', replacement: fileURLToPath(new URL('./src/cmp', import.meta.url)) },
 			{
 				find: '@stores',
-				replacement: fileURLToPath(new URL('./src/shared/stores', import.meta.url)),
+				replacement: fileURLToPath(new URL('./src/stores', import.meta.url)),
 			},
-			{ find: '@use', replacement: fileURLToPath(new URL('./src/shared/use', import.meta.url)) },
+			{ find: '@use', replacement: fileURLToPath(new URL('./src/use', import.meta.url)) },
 		],
 	},
 	plugins: [

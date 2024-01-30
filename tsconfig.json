@@ -21,11 +21,11 @@
     "noFallthroughCasesInSwitch": true,
 
     "paths": {
-      "@/*": ["./src/*"],
-      "@assets/*": ["./src/shared/assets/*"],
-      "@cmp/*": ["./src/shared/cmp/*"],
-      "@stores/*": ["./src/shared/stores/*"],
-      "@use/*": ["./src/shared/use/*"]
+      "@/*": ["./src/*", "./dist/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@cmp/*": ["./src/cmp/*"],
+      "@stores/*": ["./src/stores/*"],
+      "@use/*": ["./src/use/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],

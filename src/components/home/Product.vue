@@ -21,7 +21,7 @@
 }">
                     <n-image class="h-full" :img-props="{
                         class: ['h-full']
-                    }" object-fit="contain" :src="`src/assets/${product.disc}/${shirt.id}.png`" />
+                    }" object-fit="contain" :src="getClothesImage(shirt.id)" />
 
                     <template #footer>
                         <span class="title">{{ shirt.name }}</span>
@@ -50,6 +50,8 @@
 
 <script setup lang="ts">
 import { NavigateNextFilled, NavigateBeforeFilled } from '@vicons/material';
+
+import { getClothesImage } from '@/utils/image';
 
 interface shirtSpec {
     id: string;
