@@ -19,9 +19,12 @@
     padding: '20px',
     textAlign: 'center',
 }">
-                    <n-image class="h-full" :img-props="{
+                    <n-image class="h-full" :style="{ display: imageLoadStatus[shirt.id] ? 'block' : 'none' }" :img-props="{
                         class: ['h-full']
-                    }" object-fit="contain" :src="getClothesImage(shirt.id)" />
+                    }" object-fit="contain" :src="getClothesImage(shirt.id)" @load="handleLoadImage(shirt.id)" />
+                    <n-image class="h-full" :style="{ display: imageLoadStatus[shirt.id] ? 'none' : 'block' }" :img-props="{
+                        class: ['h-full']
+                    }" object-fit="contain" :src="getClothesImage(`${shirt.id}_p`)" />
 
                     <template #footer>
                         <span class="title">{{ shirt.name }}</span>
@@ -49,6 +52,7 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
 import { NavigateNextFilled, NavigateBeforeFilled } from '@vicons/material';
 
 import { getClothesImage } from '@/utils/image';
@@ -123,6 +127,11 @@ const products: {
             data: sg,
         },
     ];
+
+const imageLoadStatus = ref<{ [key: string]: boolean }>({});
+const handleLoadImage = (key: string) => {
+    imageLoadStatus.value[key] = true;
+};
 </script>
 
 <style scoped lang="scss">
