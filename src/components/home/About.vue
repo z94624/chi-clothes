@@ -23,9 +23,9 @@
                             <n-icon size="55" color="#fff" :component="feature.icon" />
                         </n-icon-wrapper>
                     </div>
-                    <div class="title">{{ feature.title }}</div>
-                    <div class="desc">{{ feature.description1 }}</div>
-                    <div class="desc">{{ feature.description2 }}</div>
+                    <div class="itemTitle">{{ feature.title }}</div>
+                    <div class="itemDesc">{{ feature.description1 }}</div>
+                    <div class="itemDesc">{{ feature.description2 }}</div>
                 </n-space>
             </div>
         </div>
@@ -90,19 +90,6 @@ const features: {
         &.iconEven {
             border: 1px solid #6fb92c;
         }
-    }
-
-    .title {
-        font-size: 24px;
-        font-weight: 900;
-        font-family: "Noto Sans TC", "微軟正黑體", sans-serif;
-    }
-
-    .desc {
-        font-size: 16px;
-        font-weight: 500;
-        font-family: "Noto Sans TC", "微軟正黑體", sans-serif;
-        color: #454545;
     }
 }
 </style>

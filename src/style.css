@@ -42,3 +42,16 @@ body {
   font-size: 17px;
   font-family: "Noto Sans TC", "微軟正黑體", sans-serif;
 }
+
+.itemTitle {
+    font-size: 24px;
+    font-weight: 900;
+    font-family: "Noto Sans TC", "微軟正黑體", sans-serif;
+}
+
+.itemDesc {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Noto Sans TC", "微軟正黑體", sans-serif;
+    color: #454545;
+}
