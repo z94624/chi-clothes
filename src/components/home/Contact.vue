@@ -1,5 +1,5 @@
 <template>
-    <div class="px-3 py-6">
+    <div class="px-3 py-6 bg-[#101014] text-[#ffffffd1]">
         <div class="ml-3">
             <span class="title">聯絡方式</span>
             <span class="titleDesc ml-3">Contact</span>
