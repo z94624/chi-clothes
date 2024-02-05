@@ -10,7 +10,7 @@
                 <span class="subTitle">{{ product.name }}</span>
                 <span class="subTitleDesc ml-3">{{ product.desc }}</span>
             </div>
-            <n-carousel :slides-per-view="4" autoplay draggable show-arrow class="mt-3">
+            <n-carousel :slides-per-view="2" autoplay draggable show-arrow class="mt-3">
                 <n-card v-for="shirt in product.data" :key="shirt.id" :content-style="{
                     padding: 0,
                     height: '210px',
