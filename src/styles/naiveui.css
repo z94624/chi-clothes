@@ -1,0 +1,6 @@
+.n-breadcrumb {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
