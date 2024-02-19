@@ -10,7 +10,7 @@
                 <span class="subTitle">{{ product.name }}</span>
                 <span class="subTitleDesc ml-3">{{ product.desc }}</span>
             </div>
-            <n-carousel :slides-per-view="2" autoplay draggable show-arrow class="mt-3">
+            <n-carousel :slides-per-view="slidesPerView" autoplay draggable show-arrow class="mt-3">
                 <n-card v-for="shirt in product.data" :key="shirt.id" :content-style="{
                     padding: 0,
                     height: '210px',
@@ -19,12 +19,14 @@
     padding: '20px',
     textAlign: 'center',
 }">
-                    <n-image class="h-full" :style="{ display: imageLoadStatus[shirt.id] ? 'block' : 'none' }" :img-props="{
-                        class: ['h-full']
-                    }" object-fit="contain" :src="getClothesImage(shirt.id)" @load="handleLoadImage(shirt.id)" />
-                    <n-image class="h-full" :style="{ display: imageLoadStatus[shirt.id] ? 'none' : 'block' }" :img-props="{
-                        class: ['h-full']
-                    }" object-fit="contain" :src="getClothesImage(`${shirt.id}_p`)" />
+                    <n-image class="h-full justify-center" :style="{ display: imageLoadStatus[shirt.id] ? 'flex' : 'none' }"
+                        :img-props="{
+                            class: ['h-full']
+                        }" object-fit="contain" :src="getClothesImage(shirt.id)" @load="handleLoadImage(shirt.id)" />
+                    <n-image class="h-full justify-center" :style="{ display: imageLoadStatus[shirt.id] ? 'none' : 'flex' }"
+                        :img-props="{
+                            class: ['h-full']
+                        }" object-fit="contain" :src="getClothesImage(`${shirt.id}_p`)" />
 
                     <template #footer>
                         <span class="title">{{ shirt.name }}</span>
@@ -52,16 +54,19 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { onBeforeMount, ref, watch } from 'vue';
+import { useWindowSize, useScreenOrientation } from '@vueuse/core';
 import { NavigateNextFilled, NavigateBeforeFilled } from '@vicons/material';
 
 import { getClothesImage } from '@/utils/image';
+
+const { width } = useWindowSize();
+const { orientation } = useScreenOrientation();
 
 interface shirtSpec {
     id: string;
     name: string;
 }
-
 const fulcome: shirtSpec[] = [
     {
         id: 'fu_1',
@@ -84,7 +89,6 @@ const fulcome: shirtSpec[] = [
         name: '長袖花紋 POLO 衫',
     },
 ];
-
 const sg: shirtSpec[] = [
     {
         id: 'sg_1',
@@ -107,7 +111,6 @@ const sg: shirtSpec[] = [
         name: '長袖線條 POLO 衫',
     },
 ];
-
 const products: {
     name: string,
     disc: string,
@@ -129,9 +132,34 @@ const products: {
     ];
 
 const imageLoadStatus = ref<{ [key: string]: boolean }>({});
+const slidesPerView = ref(5);
+
+watch(
+    [width, orientation],
+    () => {
+        handleWindowResize();
+    }
+);
+
 const handleLoadImage = (key: string) => {
     imageLoadStatus.value[key] = true;
 };
+
+const handleWindowResize = () => {
+    let windowWidth = window.innerWidth;
+    // console.log('Window InnerWidth', windowWidth);
+    if (windowWidth < 640) {
+        slidesPerView.value = 1;
+    } else if (windowWidth < 1024) {
+        slidesPerView.value = 3;
+    } else {
+        slidesPerView.value = 5;
+    }
+}
+
+onBeforeMount(() => {
+    handleWindowResize();
+});
 </script>
 
 <style scoped lang="scss">
