@@ -1,5 +1,5 @@
 <template>
-    <div class="px-3 py-6">
+    <div id="aboutContainer" class="px-3 py-6">
         <div class="ml-3">
             <span class="title">關於我們</span>
             <span class="titleDesc ml-3">ABOUT US</span>

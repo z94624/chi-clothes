@@ -1,5 +1,5 @@
 <template>
-    <div class="py-6">
+    <div id="productContainer" class="py-6">
         <div class="ml-6">
             <span class="title">產品介紹</span>
             <span class="titleDesc ml-3">PRODUCTS</span>
