@@ -10,14 +10,14 @@
         </div>
 
         <div class="px-3 pt-6 flex flex-wrap">
-            <n-space v-for="info in infos" :key="info.title" class="p-3 w-1/2">
+            <div v-for="info in infos" :key="info.title" class="sm:flex sm:flex-wrap sm:gap-3 p-3 w-1/2">
                 <n-icon :size="48" :component="info.icon" />
                 <n-space vertical>
                     <div class="itemTitle">{{ info.title }}</div>
                     <div class="itemDesc">{{ info.description1 }}</div>
-                    <div class="itemDesc">{{ info.description2 }}</div>
+                    <div class="itemDesc break-words">{{ info.description2 }}</div>
                 </n-space>
-            </n-space>
+            </div>
         </div>
     </div>
 </template>
