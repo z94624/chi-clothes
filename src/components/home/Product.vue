@@ -14,7 +14,6 @@
                 <n-card v-for="shirt in product.data" :key="shirt.id" :content-style="{
             padding: 0,
             height: '210px',
-            flex: 'unset',
         }" footer-class="productDesc" :footer-style="{
             padding: '20px',
             textAlign: 'center',
