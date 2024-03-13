@@ -12,21 +12,16 @@
             </div>
             <n-carousel :slides-per-view="slidesPerView" autoplay draggable show-arrow class="mt-3">
                 <n-card v-for="shirt in product.data" :key="shirt.id" :content-style="{
-                    padding: 0,
-                    height: '210px',
-                    flex: 'unset',
-                }" footer-class="productDesc" :footer-style="{
-    padding: '20px',
-    textAlign: 'center',
-}">
-                    <n-image class="h-full justify-center" :style="{ display: imageLoadStatus[shirt.id] ? 'flex' : 'none' }"
-                        :img-props="{
-                            class: ['h-full']
-                        }" object-fit="contain" :src="getClothesImage(shirt.id)" @load="handleLoadImage(shirt.id)" />
-                    <n-image class="h-full justify-center" :style="{ display: imageLoadStatus[shirt.id] ? 'none' : 'flex' }"
-                        :img-props="{
-                            class: ['h-full']
-                        }" object-fit="contain" :src="getClothesImage(`${shirt.id}_p`)" />
+            padding: 0,
+            height: '210px',
+            flex: 'unset',
+        }" footer-class="productDesc" :footer-style="{
+            padding: '20px',
+            textAlign: 'center',
+        }">
+                    <n-image class="h-full justify-center" :img-props="{
+            class: ['h-full']
+        }" object-fit="contain" :src="getClothesImage(shirt.id)" />
 
                     <template #footer>
                         <span class="title">{{ shirt.name }}</span>
@@ -131,7 +126,6 @@ const products: {
         },
     ];
 
-const imageLoadStatus = ref<{ [key: string]: boolean }>({});
 const slidesPerView = ref(5);
 
 watch(
@@ -140,10 +134,6 @@ watch(
         handleWindowResize();
     }
 );
-
-const handleLoadImage = (key: string) => {
-    imageLoadStatus.value[key] = true;
-};
 
 const handleWindowResize = () => {
     let windowWidth = window.innerWidth;
